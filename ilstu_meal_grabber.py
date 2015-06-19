@@ -1,10 +1,11 @@
 #!/usr/bin/python
 
 '''
-curl
-'http://dining.illinoisstate.edu/NetNutrition/123/Unit/SelectUnitFromUnitsList'
--H 'Cookie: ASP.NET_SessionId=cpytigxe512ovl23qontshvj;'
---data 'unitOid=1'
+The requests are working now! I just need requests.sessions for cookies.
+
+>>> response = requests.post('http://dining.illinoisstate.edu/NetNutrition/123')
+>>> cookies = 'response.cookies'
+
 '''
 
 import requests
