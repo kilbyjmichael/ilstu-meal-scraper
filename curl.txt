@@ -2,3 +2,5 @@ curl 'http://dining.illinoisstate.edu/NetNutrition/123/Unit/SelectUnitFromUnitsL
 
 
 curl 'http://dining.illinoisstate.edu/NetNutrition/123/Unit/SelectUnitFromChildUnitsList' -H 'Cookie: ASP.NET_SessionId=cpytigxe512ovl23qontshvj;' --data 'unitOid=2'
+
+curl 'http://dining.illinoisstate.edu/NetNutrition/123/Unit/SelectUnitFromChildUnitsList' -H 'Cookie: ASP.NET_SessionId=cpytigxe512ovl23qontshvj;' --data 'unitOid=6'
