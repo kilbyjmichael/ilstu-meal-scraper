@@ -1,20 +1,26 @@
 import requests
 
-'''Hypothesis: If you haven't visited all of the links (as if clicking), the server won't let you visit a farther one than you have clicked.'''
+'''Hypothesis: Must use sessions.'''
 
-# Get me some cookies
-# session = requests.Session()
-response = requests.post('http://dining.illinoisstate.edu/NetNutrition/123/')
-# cookies = session.cookies.get_dict()
+# Get me some actual cookies
+session = requests.Session()
+response = session.post('http://dining.illinoisstate.edu/NetNutrition/123/')
+cookie = session.cookies.get_dict()
+print("Made cookies... Mmm...")
 
-cookies = response.cookies
+# Now that we have cookies, request stuff WITH SESSION
 
-# Now that we have cookies, request stuff
-data = requests.post('http://dining.illinoisstate.edu/NetNutrition/123/Unit/SelectUnitFromChildUnitsList', data = 'unitOid=6', cookies = cookies)
+# Step x-1: Request Watterson?
+watterson = session.post('http://dining.illinoisstate.edu/NetNutrition/123/', data = 'unitOid=1', cookies = cookie)
+print(watterson.text)
 
-# print(data)
-# print(data.content)
+# Step x: Request Meal Station
+data = session.post('http://dining.illinoisstate.edu/NetNutrition/123/Unit/SelectUnitFromChildUnitsList', data = 'unitOid=6', cookies = cookie)
+print("Drinks Requested...")
 
-print(data.content.find(b'Juice'))
+print(data.text)
 
-# Cookies now work.
+print("Finding 'Juice'...")
+print(data.text.find('Juice'))
+
+# Cookies now * DON'T * work.

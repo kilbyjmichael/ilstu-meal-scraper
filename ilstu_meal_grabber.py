@@ -54,7 +54,7 @@ def init_cookies():
 def test_request():
     cookie = init_cookies()
     data = request_menu(place_url, building_arg, watterson_places['drinks'], cookie)
-    print(data.content)
+    print(data.text)
 
 def main():
     test_request()
