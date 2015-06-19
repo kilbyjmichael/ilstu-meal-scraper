@@ -1,0 +1,4 @@
+curl 'http://dining.illinoisstate.edu/NetNutrition/123/Unit/SelectUnitFromUnitsList' -H 'Cookie: ASP.NET_SessionId=cpytigxe512ovl23qontshvj;' --data 'unitOid=1'
+
+
+curl 'URL' -H -H 'Cookie: ASP.NET_SessionId=cpytigxe512ovl23qontshvj;' --data 'UNIT'
